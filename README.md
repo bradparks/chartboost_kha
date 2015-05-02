@@ -5,9 +5,9 @@ Chartboost Library for Haxe [Kha](https://github.com/KTXSoftware/Kha)
 - Clone repository into 'your_project/Libraries'
 - Init Chartboost
 ``` hx
-chartboost.Chartboost.init(appId:String, appSignature:String);
+chartboostkha.Chartboost.init(appId:String, appSignature:String);
 ```
 - Show interstitial
 ``` hx
-chartboost.Chartboost.showInterstitial();
+chartboostkha.Chartboost.showInterstitial();
 ```

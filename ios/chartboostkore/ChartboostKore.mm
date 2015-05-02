@@ -1,5 +1,10 @@
 #include <ChartboostKore.h>
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import <Chartboost/Chartboost.h>
+#import <Chartboost/CBNewsfeed.h>
+#import <CommonCrypto/CommonDigest.h>
+#import <AdSupport/AdSupport.h>
 
 namespace ChartboostKore {
 
@@ -7,10 +12,10 @@ namespace ChartboostKore {
 		NSString* strId = [[NSString alloc] initWithUTF8String:appId];
 		NSString* strSignature = [[NSString alloc] initWithUTF8String:appSignature];
 
-		// initialize the Chartboost library
+		// Initialize the Chartboost library
         [Chartboost startWithAppId:strId 
          			  appSignature:strSignature 
-         			      delegate:self];
+         			      delegate:(id<ChartboostDelegate>)[[UIApplication sharedApplication] delegate]];
 		return 0;
 	}
 

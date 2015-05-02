@@ -1,4 +1,4 @@
-package chartboost;
+package chartboostkha;
 
 @:headerCode('
 #include <ChartboostKore.h>
