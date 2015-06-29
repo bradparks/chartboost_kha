@@ -21,6 +21,19 @@ class Chartboost {
 	}
 
 	#if cpp
+	@:functionCode('ChartboostKore::cacheInterstitial();')
+	#end
+	public static function cacheInterstitial():Void {
+	}
+
+	#if cpp
+	@:functionCode('return ChartboostKore::hasInterstitial();')
+	#end
+	public static function hasInterstitial():Bool {
+		return false;
+	}
+
+	#if cpp
 	@:functionCode('ChartboostKore::showRewardedVideo();')
 	#end
 	public static function showRewardedVideo():Void {
