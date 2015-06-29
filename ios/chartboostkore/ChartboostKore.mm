@@ -23,4 +23,14 @@ namespace ChartboostKore {
 		// Show an interstitial ad
         [Chartboost showInterstitial:CBLocationHomeScreen];
 	}
+
+	void showRewardedVideo() {	
+		// Show a rewarded video ad
+        [Chartboost showRewardedVideo:CBLocationHomeScreen];
+	}
+
+	void cacheRewardedVideo() {	
+		// Cache a rewarded video ad
+		[Chartboost cacheRewardedVideo:CBLocationHomeScreen];
+	}
 }

@@ -19,4 +19,16 @@ class Chartboost {
 	#end
 	public static function showInterstitial():Void {
 	}
+
+	#if cpp
+	@:functionCode('ChartboostKore::showRewardedVideo();')
+	#end
+	public static function showRewardedVideo():Void {
+	}
+
+	#if cpp
+	@:functionCode('ChartboostKore::cacheRewardedVideo();')
+	#end
+	public static function cacheRewardedVideo():Void {
+	}
 }
