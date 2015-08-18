@@ -5,17 +5,22 @@
 #import <Chartboost/CBNewsfeed.h>
 #import <CommonCrypto/CommonDigest.h>
 #import <AdSupport/AdSupport.h>
+#import "Kore/KoreAppDelegate.h"
 
 namespace ChartboostKore {
 
 	int init(const char* appId, const char* appSignature) {
-		NSString* strId = [[NSString alloc] initWithUTF8String:appId];
-		NSString* strSignature = [[NSString alloc] initWithUTF8String:appSignature];
+		//NSString* strId = [[NSString alloc] initWithUTF8String:appId];
+		//NSString* strSignature = [[NSString alloc] initWithUTF8String:appSignature];
 
 		// Initialize the Chartboost library
-        [Chartboost startWithAppId:strId 
-         			  appSignature:strSignature 
-         			      delegate:(id<ChartboostDelegate>)[[UIApplication sharedApplication] delegate]];
+        //[Chartboost startWithAppId:strId 
+        // 			  appSignature:strSignature 
+        // 			      delegate:(id<ChartboostDelegate>)[[UIApplication sharedApplication] delegate]];
+		
+		KoreAppDelegate* appd = (KoreAppDelegate*)[[UIApplication sharedApplication]delegate];
+		[appd initCBAds];
+
 		return 0;
 	}
 
