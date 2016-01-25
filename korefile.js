@@ -7,8 +7,8 @@ if (platform === Platform.iOS) {
 	project.addIncludeDir('ios/chartboostkore');
 }
 else if (platform === Platform.Android) {
-	project.addFile('android/sharekore/**');
-	project.addIncludeDir('android/sharekore');
+	project.addFile('android/chartboostkore/**');
+	project.addIncludeDir('android/chartboostkore');
 	project.addJavaDir('android/java');
 }
 

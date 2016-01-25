@@ -18,8 +18,8 @@ namespace ChartboostKore {
         // 			  appSignature:strSignature 
         // 			      delegate:(id<ChartboostDelegate>)[[UIApplication sharedApplication] delegate]];
 		
-		KoreAppDelegate* appd = (KoreAppDelegate*)[[UIApplication sharedApplication]delegate];
-		[appd initCBAds];
+		//KoreAppDelegate* appd = (KoreAppDelegate*)[[UIApplication sharedApplication]delegate];
+		//[appd initCBAds];
 
 		return 0;
 	}

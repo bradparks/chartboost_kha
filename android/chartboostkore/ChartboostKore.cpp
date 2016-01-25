@@ -1,33 +1,61 @@
 #include <ChartboostKore.h>
 
-#include <jni.h>
-
-JNIEnv* getEnv();
+#include <Kore/Android.h>
 
 namespace ChartboostKore {
 
 	int init(const char* appId, const char* appSignature) {
 		
+
 		return 0;
 	}
 
-	void showInterstitial() {	
+	void showInterstitial() {
+		JNIEnv* env;
+		KoreAndroid::getActivity()->vm->AttachCurrentThread(&env, NULL);
 
+		jclass cls = KoreAndroid::findClass(env, "chartboostkore.ChartboostKore");
+
+        jmethodID methodId = env->GetStaticMethodID(cls, "showInterstitial", "()V");
+
+        env->CallStaticVoidMethod(cls, methodId);
+
+        KoreAndroid::getActivity()->vm->DetachCurrentThread();
 	}
 
-	void cacheInterstitial() {	
+	void cacheInterstitial() {
+		JNIEnv* env;
+		KoreAndroid::getActivity()->vm->AttachCurrentThread(&env, NULL);
 
+		jclass cls = KoreAndroid::findClass(env, "chartboostkore.ChartboostKore");
+
+        jmethodID methodId = env->GetStaticMethodID(cls, "cacheInterstitial", "()V");
+
+        env->CallStaticVoidMethod(cls, methodId);
+
+        KoreAndroid::getActivity()->vm->DetachCurrentThread();
 	}
 
 	bool hasInterstitial() {
-		return false;
+		JNIEnv* env;
+		KoreAndroid::getActivity()->vm->AttachCurrentThread(&env, NULL);
+
+		jclass cls = KoreAndroid::findClass(env, "chartboostkore.ChartboostKore");
+
+        jmethodID methodId = env->GetStaticMethodID(cls, "hasInterstitial", "()Z");
+
+        bool result = env->CallStaticBooleanMethod(cls, methodId);
+        
+        KoreAndroid::getActivity()->vm->DetachCurrentThread();
+
+        return result;
 	}
 
-	void showRewardedVideo() {	
+	void showRewardedVideo() {
 
 	}
 
-	void cacheRewardedVideo() {	
+	void cacheRewardedVideo() {
 
 	}
 }

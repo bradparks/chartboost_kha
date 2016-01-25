@@ -1,6 +1,5 @@
 package chartboostkore;
 
-import com.ktxsoftware.kore.KoreActivity;
 import com.chartboost.sdk.Libraries.CBLogging.Level;
 import com.chartboost.sdk.Model.CBError.CBClickError;
 import com.chartboost.sdk.Model.CBError.CBImpressionError;
@@ -12,7 +11,19 @@ import com.chartboost.sdk.ChartboostDelegate;
 
 public class ChartboostKore {
     
-	public static void onCreate() {
-		Chartboost.startWithAppId(this, appId, appSignature);
+	public static void init() {
+		//Chartboost.startWithAppId(this, appId, appSignature);
+	}
+
+	public static void showInterstitial() {	
+		Chartboost.showInterstitial(CBLocation.LOCATION_DEFAULT);
+	}
+
+	public static void cacheInterstitial() {
+		Chartboost.cacheInterstitial(CBLocation.LOCATION_DEFAULT);
+	}
+
+	public static boolean hasInterstitial() {
+		return Chartboost.hasInterstitial(CBLocation.LOCATION_DEFAULT);
 	}
 }
